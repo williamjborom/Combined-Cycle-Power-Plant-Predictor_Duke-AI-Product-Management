@@ -18,10 +18,13 @@ data = np.loadtxt('CCPP_data.csv', delimiter=',', skiprows=1)
 #Train / Test Spit
 X = data[:,:-2]
 y = data[:,-1]
-print(X)
-print(y)
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=10)
 
 
 #Linear Model 1
+lm1 = LinearRegression().fit(X_train, y_train)
+train_accuracy = lm1.score(X_train, y_train)
+print(f"Train accuracy for Linear Model 1 (Basic) is {train_accuracy}")
+
+
 
