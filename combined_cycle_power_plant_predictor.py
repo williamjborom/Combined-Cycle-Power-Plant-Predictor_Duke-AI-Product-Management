@@ -2,6 +2,8 @@ import wget
 import numpy as np
 import os
 from pathlib import Path
+from sklearn.linear_model import LinearRegression
+from sklearn.model_selection import train_test_split
 
 #Download Data
 if not os.path.exists("CCPP_data.csv"):
@@ -12,3 +14,14 @@ else:
 
 #Read data to numpy array
 data = np.loadtxt('CCPP_data.csv', delimiter=',', skiprows=1)
+
+#Train / Test Spit
+X = data[:,:-2]
+y = data[:,-1]
+print(X)
+print(y)
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=10)
+
+
+#Linear Model 1
+
