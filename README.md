@@ -18,3 +18,4 @@ And the output variable PE - Net Hourly Electrical Output.
 
 ## Models 
 
+I will try out a total of 4 models. Two of these will be Linear Models built using SKLearn. The data is small enough that the linear models do not need any iterative training algorithm. The first linear model will be a basic linear combination of the features with an intercept or bias term. The second linear model will also have all degree polynomial terms including interaction effects. I used 10 fold CV to assess the accuracy of each model.
